@@ -23,7 +23,6 @@ function Step3({ formData, onChange, onSubmit, onBack }) {
       }
   
       setErrors(errors);
-      console.log("errors: ", errors)
   
       if (Object.keys(errors).length === 0) {
         onSubmit();

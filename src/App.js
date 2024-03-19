@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-// import Seat from './Seat';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
@@ -32,13 +31,11 @@ function App() {
   };
 
   const handleSubmit = async () => {
-    console.log("formData: ", formData)
     try {
       // Exclude acceptTermsAndCondition field from the form data
       const { acceptTermsAndCondition, ...formDataToSend } = formData;
   
       const response = await axios.post('https://codebuddy.review/submit', formDataToSend);
-      console.log('Form submitted successfully:', response.data);
       // Redirect to /posts
       window.location.href = '/posts';
     } catch (error) {
